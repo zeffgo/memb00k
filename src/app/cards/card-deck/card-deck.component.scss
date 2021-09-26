@@ -1,0 +1,31 @@
+:host {
+  display: block;
+  min-height: 700px;
+}
+
+.x-card-roll {
+  list-style: none;
+  display: flex;
+  li {
+    cursor: pointer;
+    &.active {
+      border: 2px solid gray;
+    }
+  }
+}
+
+.x-preview {
+  width: 90%;
+  height: 80vh;
+  figure {
+    background: #000 no-repeat center center;
+    background-size: contain;
+    figcaption {
+      color: gray;
+      padding: 20px 10px;
+      background: #ffffff99;
+      max-height: 30%;
+      overflow-y: scroll;
+    }
+  }
+}

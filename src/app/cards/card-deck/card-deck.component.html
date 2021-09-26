@@ -1,0 +1,20 @@
+<ng-template #noDataTpl>
+  no data
+</ng-template>
+
+<div *ngIf="activeCard; else noDataTpl">
+  <div class=" bg-dark my-4 shadow m-auto x-preview">
+    <figure (swipe)="onSwipe($event)"
+            (click)="isCaptionVisible = !isCaptionVisible" 
+            class="h-100 w-100 d-flex justify-content-end flex-column" 
+            [style.background-image]="'url(' + activeCard.path + ')'">
+      <figcaption [class.d-none]="!isCaptionVisible" class="shadow">{{activeCard.caption}}</figcaption>
+    </figure>
+  </div>
+  
+  <ul class="x-card-roll m-auto text-center w-75 p-0 d-flex flex-wrap">
+    <li class="m-2" [class.active]="image.path === activeCard.path" *ngFor="let image of person.images" (click)="onClickThumb(image)">
+      <app-card [image]="image"></app-card>
+    </li>
+  </ul>
+</div>
