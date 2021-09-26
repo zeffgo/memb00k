@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node node_modules/.bin/http-server -g --proxy http://localhost:8080?",
+    "start": "node node_modules/.bin/http-server -g",
     "start-dev": "ng serve",
     "build": "ng build --prod --build-optimizer=true --stats-json=true --output-path=public",
     "test": "ng test",
