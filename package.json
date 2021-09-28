@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node node_modules/.bin/http-server -g -P https://memb00k.herokuapp.com/",
+    "start": "node node_modules/.bin/http-server -g -P https://memb00k.herokuapp.com",
     "start-dev": "ng serve",
     "build": "ng build --prod --build-optimizer=true --stats-json=true --output-path=public",
     "test": "ng test",
