@@ -1,6 +1,6 @@
 
 <ul class="x-ppl-list bg-light position-absolute shadow rounded">
-  <li (click)="onClickPerson(i)" *ngFor="let p of people; let i = index">
+  <li class="cpointer" (click)="onClickPerson(i)" *ngFor="let p of people; let i = index">
     <p>{{p.name}}</p>
     <ul [class.d-none]="activePerson !== i">
       <li *ngFor="let album of p.albums">
