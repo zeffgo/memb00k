@@ -9,9 +9,15 @@
             class="h-100 w-100 d-flex justify-content-end flex-column" 
             [style.background-image]="'url(' + activeCard.path + ')'">
       <figcaption [class.d-none]="!isCaptionVisible" class="shadow position-relative">
-        <span [style.fontSize]="captionFontSize + 'px'">
+        
+        <p [style.fontSize]="captionFontSize + 'px'">
           {{activeCard.caption}}
-        </span>
+        </p>
+        
+        <p class="mb-0">
+          Year: {{activeCard.year || 'Unknown'}} | Location: Unknown | People: Unknown
+        </p>
+
         <div class="x-font-toggle position-absolute">
           <app-font-toggle></app-font-toggle>
         </div>
