@@ -8,7 +8,7 @@ export const cardDeckRoutes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'people/:id',
+    path: 'people/:id/:id2',
     component: CardDeckComponent
   }
 ];

@@ -1,5 +1,11 @@
 
 <ul class="x-ppl-list bg-light position-absolute shadow rounded">
-  <li><a routerLink="people/1">David Blank</a></li>
-  <li><a routerLink="people/2">Alex Sobolevsky</a></li>
+  <li (click)="onClickPerson(i)" *ngFor="let p of people; let i = index">
+    <p>{{p.name}}</p>
+    <ul [class.d-none]="activePerson !== i">
+      <li *ngFor="let album of p.albums">
+        <a [routerLink]="p.link + '/' + album.id">{{album.name}}</a>
+      </li>
+    </ul>
+  </li>
 </ul>
