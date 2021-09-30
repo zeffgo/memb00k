@@ -1,5 +1,5 @@
 import { Routes } from "@angular/router";
-import { CardDeckComponent } from "./card-deck/card-deck.component";
+import { AlbumComponent } from "./album/album.component";
 import { HomeComponent } from "./home/home.component";
 
 export const cardDeckRoutes: Routes = [
@@ -9,6 +9,6 @@ export const cardDeckRoutes: Routes = [
   },
   {
     path: 'people/:id/:id2',
-    component: CardDeckComponent
+    component: AlbumComponent
   }
 ];

@@ -1,3 +1,5 @@
+// tmp data seed; initial interfaces
+
 export interface Image {
   path: string;
   name: string;
@@ -20,9 +22,9 @@ export const data = {
       id: 1,
       name: 'David Blank',
       albums: [
-        {albumId: 0, name: 'Album 1', description: 'Test album 0'}, 
+        {albumId: 0, name: 'Album 0', description: 'Test album 0'}, 
         {albumId: 1, name: 'Album 1', description: 'Test album 1'},
-        {albumId: 2, name: 'Album 1', description: 'Test album 2'}
+        {albumId: 2, name: 'Album 2', description: 'Test album 2'}
       ],
       images: [
         {path: 'assets/images/dblank/1.jpg', name: '1.jpg', metas: {albums: [2], description: 'ljhsdfhjljhdsf', year: 0}},
@@ -57,7 +59,7 @@ export const data = {
       id: 2,
       name: 'Alexander Sobolevsky',
       albums: [
-        {albumId: 0, name: 'Album 01', description: 'Test album 01'},
+        {albumId: 0, name: 'Album 0', description: 'Test album 0'},
       ],
       images: [
         {path: 'assets/images/alexsob/20210911_172940.jpg', name: '20210911_172940.jpg', metas: {albums: [0, 1], description: 'ljhsdfhjljhdsf', year: 0}},

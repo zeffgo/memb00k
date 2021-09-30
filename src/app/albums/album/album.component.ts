@@ -10,11 +10,11 @@ export const personMock = {
 
 @UntilDestroy()
 @Component({
-  selector: 'app-card-deck',
-  templateUrl: './card-deck.component.html',
-  styleUrls: ['./card-deck.component.scss']
+  selector: 'app-album',
+  templateUrl: './album.component.html',
+  styleUrls: ['./album.component.scss']
 })
-export class CardDeckComponent implements OnInit {
+export class AlbumComponent implements OnInit {
 
   isCaptionVisible = true;
   activeImagePath: string;
