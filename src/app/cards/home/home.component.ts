@@ -8,10 +8,7 @@ import { data } from 'src/assets/data';
 })
 export class HomeComponent implements OnInit {
   
-  people = [
-    {link: 'people/1', name: 'David Blank', albums: data.people[0].albums},
-    {link: 'people/2', name: 'Alex Sobolevsky', albums: data.people[1].albums}
-  ];
+  people = data.people.map(p => ({link: `people/${p.id}`, name: p.name, albums: p.albums}));
   activePerson;
 
   constructor() { }

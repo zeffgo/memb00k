@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Album, data, Image } from 'src/assets/data';
 
 export const personMock = {
   id: 0,
   albums: [{name: 'mock', description: 'mock', albumId: 0, images: []}]
 };
+
+@UntilDestroy()
 @Component({
   selector: 'app-card-deck',
   templateUrl: './card-deck.component.html',
@@ -24,7 +27,7 @@ export class CardDeckComponent implements OnInit {
   };
 
   constructor(private router: Router) {
-    this.router.events.subscribe((event) => {
+    this.router.events.pipe(untilDestroyed(this)).subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const [personId, albumId] = event.url.split('/').slice(-2).map(n => +n);
         const person = data.people.find(p => p.id === personId);
