@@ -65,6 +65,13 @@ export class AlbumComponent implements OnInit {
   }
 
   onSwipe(ev) {
+    
+    // recongize scroll
+    if (Math.abs(ev.deltaY) > Math.abs(ev.deltaX)) {
+      window.scrollBy(0, ev.deltaY);
+      return;
+    }
+
     let newIndex = this.selectedAlbum.images.findIndex(i => i.path === this.activeCard.path) + (ev.deltaX > 0 ? 1 : -1);
     if (newIndex < 0) {
       newIndex = this.selectedAlbum.images.length - 1;
