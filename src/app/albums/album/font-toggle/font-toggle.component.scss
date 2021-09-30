@@ -1,0 +1,10 @@
+.x-wrapper {
+  .fa, .fas {
+    &:nth-child(1) {
+      margin-right: 10px;
+    }
+    &:nth-child(2) {
+      margin-right: 5px;
+    }
+  }
+}

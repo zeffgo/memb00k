@@ -5,10 +5,17 @@
 <div *ngIf="activeCard; else noDataTpl">
   <div class=" bg-dark my-4 shadow m-auto x-preview">
     <figure (swipe)="onSwipe($event)"
-            (click)="isCaptionVisible = !isCaptionVisible" 
+            (click)="onClickPreview($event)" 
             class="h-100 w-100 d-flex justify-content-end flex-column" 
             [style.background-image]="'url(' + activeCard.path + ')'">
-      <figcaption [class.d-none]="!isCaptionVisible" class="shadow">{{activeCard.caption}}</figcaption>
+      <figcaption [class.d-none]="!isCaptionVisible" class="shadow position-relative">
+        <span [style.fontSize]="captionFontSize + 'px'">
+          {{activeCard.caption}}
+        </span>
+        <div class="x-font-toggle position-absolute">
+          <app-font-toggle></app-font-toggle>
+        </div>
+      </figcaption>
     </figure>
   </div>
   

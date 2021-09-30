@@ -26,6 +26,10 @@
       background: #ffffff99;
       max-height: 30%;
       overflow-y: scroll;
+      .x-font-toggle {
+        right: 5px;
+        top: 5px;
+      }
     }
   }
 }

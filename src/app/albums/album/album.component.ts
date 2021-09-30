@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { UserSettingsService } from 'src/app/user/user-settings.service';
 import { Album, data, Image } from 'src/assets/data';
 
 export const personMock = {
@@ -26,7 +27,14 @@ export class AlbumComponent implements OnInit {
     caption: string;
   };
 
-  constructor(private router: Router) {
+  captionFontSize = 16;
+
+  constructor(private router: Router, private userSettings: UserSettingsService) {
+
+    this.userSettings.settings$.pipe(untilDestroyed(this)).subscribe(settings => {
+      this.captionFontSize = settings.captionFontSize;
+    });
+
     this.router.events.pipe(untilDestroyed(this)).subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const [personId, albumId] = event.url.split('/').slice(-2).map(n => +n);
@@ -67,4 +75,9 @@ export class AlbumComponent implements OnInit {
     this.onClickThumb(this.selectedAlbum.images[newIndex]);
   }
 
+  onClickPreview(ev) {
+    if ('FIGURE' === ev.target.tagName) {
+      this.isCaptionVisible = !this.isCaptionVisible;
+    }
+  }
 }
