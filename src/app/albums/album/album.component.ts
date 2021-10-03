@@ -25,6 +25,7 @@ export class AlbumComponent implements OnInit {
   activeCard: {
     path: string;
     caption: string;
+    year: number;
   };
 
   captionFontSize = 16;
@@ -61,7 +62,7 @@ export class AlbumComponent implements OnInit {
   }
 
   onClickThumb(image) {
-    this.activeCard = {path: image.path, caption: image.metas.description};
+    this.activeCard = {path: image.path, caption: image.metas.description, year: 0};
   }
 
   onSwipe(ev) {
