@@ -6,11 +6,12 @@ import { HomeComponent } from './home/home.component';
 import { AlbumComponent } from './album/album.component';
 import { PhotoComponent } from './photo/photo.component';
 import { FontToggleComponent } from './album/font-toggle/font-toggle.component';
+import { SearchComponent } from '../search/search.component';
 
 
 
 @NgModule({
-  declarations: [AlbumComponent, PhotoComponent, HomeComponent, FontToggleComponent],
+  declarations: [AlbumComponent, PhotoComponent, HomeComponent, SearchComponent, FontToggleComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(cardDeckRoutes)

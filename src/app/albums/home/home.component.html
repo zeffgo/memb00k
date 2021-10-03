@@ -1,3 +1,7 @@
+<div class="text-center my-5">
+  <button class="btn btn-secondary py-2 px-5" routerLink="search">search</button>
+</div>
+
 <ul class="x-ppl-list bg-light position-absolute shadow rounded">
   <li class="cpointer" (click)="onClickPerson(i)" *ngFor="let p of people; let i = index">
     <p>{{p.name}}</p>
