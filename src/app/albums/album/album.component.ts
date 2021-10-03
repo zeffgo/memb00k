@@ -69,7 +69,7 @@ export class AlbumComponent implements OnInit {
     
     // recongize scroll
     if (Math.abs(ev.deltaY) > Math.abs(ev.deltaX)) {
-      window.scrollBy(0, ev.deltaY);
+      window.scrollBy(0, -ev.deltaY);
       return;
     }
 
