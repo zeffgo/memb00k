@@ -16,6 +16,13 @@ export interface Album {
   images?: Image[];
 }
 
+export interface Person {
+  id: number;
+  name: string;
+  albums: Album[];
+  images: Image[];
+}
+
 export const data = {
   people: [
     {

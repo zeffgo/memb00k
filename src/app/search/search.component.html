@@ -1,14 +1,21 @@
-<form class="my-5 mx-auto text-center" autocomplete="off" (submit)="onSearchSubmit($event)">
+<form #f="ngForm" [formGroup]="form" class="my-5 mx-auto text-center" autocomplete="off" (ngSubmit)="onSearchSubmit(f)">
   <p>
-    <input placeholder="name">
+    <input placeholder="name" name="name" formControlName="name">
   </p>
   <p>
-    <input placeholder="country">
+    <input placeholder="country" name="country" formControlName="country">
   </p>
   <p>
-    <input placeholder="city">
+    <input placeholder="city" name="city" formControlName="city">
+  </p>
+  <p>
+    <input type="number" placeholder="year" name="year" formControlName="year">
   </p>
   <p>
     <input type="submit" class="btn btn-secondary px-4 py-2" value="go">
   </p>
 </form>
+
+<div *ngFor="let sr of searchResults">
+  {{sr}}
+</div>

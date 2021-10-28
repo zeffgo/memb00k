@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { UserSettingsService } from '../../../user/user-settings.service';
 
 import { FontToggleComponent } from './font-toggle.component';
 
@@ -8,7 +9,8 @@ describe('FontToggleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FontToggleComponent ]
+      declarations: [ FontToggleComponent ],
+      imports: [UserSettingsService]
     })
     .compileComponents();
   }));

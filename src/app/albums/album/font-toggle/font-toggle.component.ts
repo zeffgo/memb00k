@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserSettingsService } from 'src/app/user/user-settings.service';
+import { UserSettingsService } from '../../../../../src/app/user/user-settings.service';
 
 @Component({
   selector: 'app-font-toggle',
